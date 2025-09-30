@@ -1,0 +1,7 @@
+question_number,question,question_type,user_answer,correct_answer,is_correct,options
+1,Which of the following ancient civilizations built the Great Library of Alexandria?,MCQ,Ancient Greeks,Egyptians,False,"['Ancient Greeks', 'Egyptians', 'Persians', 'Romans']"
+2,Which ancient civilization built the city of Machu Picchu?,MCQ,Aztecs,Incas,False,"['Aztecs', 'Mayans', 'Incas', 'Olmecs']"
+3,Which of the following ancient civilizations built the city of Machu Picchu?,MCQ,Aztecs,Incans,False,"['Aztecs', 'Mayans', 'Incans', 'Olmecs']"
+4,Who was the Roman Emperor that was assassinated on the Senate floor in 41 AD?,MCQ,Caligula,Caligula,True,"['Caligula', 'Nero', 'Augustus', 'Tiberius']"
+5,What was the primary cause of the Great Fire of London in 1666?,MCQ,A combination of a lightning strike and human error,A combination of a lightning strike and human error,True,"['A combination of a lightning strike and human error', 'A strong earthquake', 'The Great Plague', 'A severe drought']"
+6,Which ancient civilization built the Great Library of Alexandria?,MCQ,Ancient Greeks,Ancient Egyptians,False,"['Ancient Greeks', 'Ancient Romans', 'Ancient Egyptians', 'Assyrians']"
