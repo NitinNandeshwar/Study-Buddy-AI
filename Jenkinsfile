@@ -30,31 +30,31 @@ pipeline {
                 }
             }
         }
-        stage('Update Deployment YAML with New Tag') {
-            steps {
-                script {
-                    sh """
-                    sed -i 's|image: nitinnandeshwar/studybuddy:.*|image: nitinnandeshwar/studybuddy:${IMAGE_TAG}|' manifests/deployment.yaml
-                    """
-                }
-            }
-        }
+        // stage('Update Deployment YAML with New Tag') {
+        //     steps {
+        //         script {
+        //             sh """
+        //             sed -i 's|image: nitinnandeshwar/studybuddy:.*|image: nitinnandeshwar/studybuddy:${IMAGE_TAG}|' manifests/deployment.yaml
+        //             """
+        //         }
+        //     }
+        // }
 
-        stage('Commit Updated YAML') {
-            steps {
-                script {
-                    withCredentials([usernamePassword(credentialsId: 'github-token', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS')]) {
-                        sh '''
-                        git config user.name "NitinNandeshwar"
-                        git config user.email "samarthnitin64@gmail.com"
-                        git add manifests/deployment.yaml
-                        git commit -m "Update image tag to ${IMAGE_TAG}" || echo "No changes to commit"
-                        git push https://${GIT_USER}:${GIT_PASS}@github.com/NitinNandeshwar/Study-Buddy-AI.git HEAD:main
-                        '''
-                    }
-                }
-            }
-        }
+        // stage('Commit Updated YAML') {
+        //     steps {
+        //         script {
+        //             withCredentials([usernamePassword(credentialsId: 'github-token', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS')]) {
+        //                 sh '''
+        //                 git config user.name "NitinNandeshwar"
+        //                 git config user.email "samarthnitin64@gmail.com"
+        //                 git add manifests/deployment.yaml
+        //                 git commit -m "Update image tag to ${IMAGE_TAG}" || echo "No changes to commit"
+        //                 git push https://${GIT_USER}:${GIT_PASS}@github.com/NitinNandeshwar/Study-Buddy-AI.git HEAD:main
+        //                 '''
+        //             }
+        //         }
+        //     }
+        // }
         stage('Install Kubectl & ArgoCD CLI Setup') {
             steps {
                 sh '''
