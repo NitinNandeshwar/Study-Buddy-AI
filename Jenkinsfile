@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                     echo 'Building Docker image...'
-                    dockerImage = docker.build("${DOCKER_HUB_REPO}:${IMAGE_TAG}")
+                    dockerImage = docker.build("${DOCKER_HUB_REPO}:v6")
                 }
             }
         }
@@ -25,7 +25,7 @@ pipeline {
                 script {
                     echo 'Pushing Docker image to DockerHub...'
                     docker.withRegistry('https://registry.hub.docker.com' , "${DOCKER_HUB_CREDENTIALS_ID}") {
-                        dockerImage.push("${IMAGE_TAG}")
+                        dockerImage.push("v6")
                     }
                 }
             }
