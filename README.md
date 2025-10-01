@@ -3,8 +3,8 @@
 ![Tech Stack](md_img/Tech_Stack.png)
 
 
-Study Buddy AI is an interactive quiz generation tool built with **Streamlit**.  
-It allows users to generate quizzes on custom topics using AI-powered question generation, attempt them in real-time, and get instant evaluation with results.
+**Study Buddy AI LLMOps** is an AI-powered learning assistant designed to generate, manage, and evaluate quizzes using Large Language Models (LLMs).  
+It combines the simplicity of **Streamlit** for the user interface with modern **MLOps/LLMOps practices** like containerization, CI/CD pipelines, and cloud deployment to ensure scalability, automation, and reliability.  
 
 ---
 
