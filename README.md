@@ -1,5 +1,8 @@
 # 🎧 Study Buddy AI
 
+![Tech Stack](md_img/Tech_Stack.png)
+
+
 Study Buddy AI is an interactive quiz generation tool built with **Streamlit**.  
 It allows users to generate quizzes on custom topics using AI-powered question generation, attempt them in real-time, and get instant evaluation with results.
 
@@ -29,6 +32,29 @@ It allows users to generate quizzes on custom topics using AI-powered question g
 
 ## 🛠️ Tech Stack
 
+1. **Groq** → *LLM (Free)*  
+
+2. **DockerHub** → *Platform for storing our Docker images*  
+
+3. **LangChain** → *Generative AI Framework to interact with LLM*  
+
+4. **GIT-OPS** → *Deploy and manage infrastructure or applications using Git as the single source of truth*  
+
+5. **Minikube** → *For making a Kubernetes Cluster where we can deploy our application*  
+
+6. **Streamlit** → *To build the UI or frontend of the app*  
+
+7. **Docker** → *For containerization of the app during deployment*  
+
+8. **Jenkins** → *For making CI (Continuous Integration) part of CI/CD Pipeline*  
+
+9. **ArgoCD** → *For making CD (Continuous Deployment) part of CI/CD Pipeline*  
+
+10. **GCP VM** → *Virtual Machine that can be accesed on Google cloud *
+
+11. **GitHub** → *It will work as a SCM for our Project* 
+
+
 - [Streamlit](https://streamlit.io/) – UI framework  
 - [Python 3.11+](https://www.python.org/) – Core language  
 - [Pandas](https://pandas.pydata.org/) – Result data handling  
@@ -37,5 +63,84 @@ It allows users to generate quizzes on custom topics using AI-powered question g
 
 ---
 
-## 📂 Project Structure
+# 🏗️ System Architecture & Workflow (Flowchart)
+
+```text
+                ┌───────────────────────┐
+                │   Project & API Setup │
+                └───────────┬───────────┘
+                            │
+                ┌───────────▼───────────┐
+                │   Configuration Code   │
+                └───────────┬───────────┘
+                            │
+                ┌───────────▼───────────┐
+                │ Question Schemas/Models│
+                └───────────┬───────────┘
+                            │
+                ┌───────────▼───────────┐
+                │  Prompt Templates Code │
+                └───────────┬───────────┘
+                            │
+                ┌───────────▼───────────┐
+                │  Groq Client Setup     │
+                └───────────┬───────────┘
+                            │
+                ┌───────────▼───────────┐
+                │ Question Generator Code│
+                └───────────┬───────────┘
+                            │
+                ┌───────────▼───────────┐
+                │   Helper Class Codes   │
+                └────────────────────────┘
+
+
+APPLICATION
+────────────
+    ┌─────────────────┐
+    │ Main Application│
+    └────────┬────────┘
+             │
+ VERSIONING & CONTAINERIZATION
+ ─────────────────────────────
+    ┌─────────────┐   ┌───────────────┐
+    │ Code Version│──▶│   Dockerfile  │
+    └─────────────┘   └───────────────┘
+
+
+INFRASTRUCTURE & DEPLOYMENT
+────────────────────────────
+    ┌───────────────────────┐
+    │ Kubernetes Manifests  │
+    └───────────┬───────────┘
+                │
+    ┌───────────▼───────────┐
+    │ GCP VM Instance Setup │
+    └───────────────────────┘
+
+
+CI/CD PIPELINE
+───────────────
+    ┌────────────┐
+    │ Jenkins    │
+    └──────┬─────┘
+           │
+    ┌──────▼──────┐
+    │ GitHub +    │
+    │ Jenkins     │
+    └──────┬──────┘
+           │
+    ┌──────▼────────┐
+    │ Build & Push  │
+    │ Docker Image  │
+    └──────┬────────┘
+           │
+    ┌──────▼───────┐
+    │ ArgoCD Setup │
+    └──────┬───────┘
+           │
+    ┌──────▼────────┐
+    │ GitHub Webhooks│
+    └───────────────┘
+
 
